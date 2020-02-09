@@ -1765,6 +1765,7 @@ Webflow.define('brand', module.exports = function ($) {
   }
 
   function createBadge() {
+    //removing badge
     //var $brand = $('<a class="w-webflow-badge"></a>').attr('href', 'https://webflow.com?utm_campaign=brandjs');
     var $logoArt = $('<img>').attr('src', 'https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon.f67cd735e3.svg').attr('alt', '').css({
       marginRight: '8px',
@@ -3946,7 +3947,7 @@ Webflow.define('forms', module.exports = function ($, _) {
     formUrl = "https://webflow.com" + '/api/v1/form/' + siteId; // Work around same-protocol IE XDR limitation - without this IE9 and below forms won't submit
 
     if (retro && formUrl.indexOf("https://webflow.com") >= 0) {
-      formUrl = formUrl.replace("https://webflow.com", "http://formdata.webflow.com");
+      formUrl = formUrl.replace("https://webflow.com", "https://formdata.webflow.com");
     }
 
     signFileUrl = "".concat(formUrl, "/signFile");
@@ -5021,7 +5022,7 @@ function createLightbox(window, document, $, container) {
   }
 
   function svgDataUri(width, height) {
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '"/>';
+    var svg = '<svg xmlns="https://www.w3.org/2000/svg" width="' + width + '" height="' + height + '"/>';
     return 'data:image/svg+xml;charset=utf-8,' + encodeURI(svg);
   } // Compute some dimensions manually for iOS < 8, because of buggy support for VH.
   // Also, Android built-in browser does not support viewport units.
